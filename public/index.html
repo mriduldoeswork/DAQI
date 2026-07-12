@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Air Quality Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="molecule-container">
+        <div class="molecule co2">CO₂</div>
+        <div class="molecule no2">NO₂</div>
+        <div class="molecule pm25">PM₂.₅</div>
+        <div class="molecule pm10">PM₁₀</div>
+        <div class="molecule co2" style="top: 60%; left: 80%; animation-delay: 2s;">CO₂</div>
+        <div class="molecule no2" style="top: 15%; left: 80%; animation-delay: 4s;">NO₂</div>
+        <div class="molecule pm25" style="top: 85%; left: 10%; animation-delay: 1s;">PM₂.₅</div>
+        <div class="molecule pm10" style="top: 5%; left: 20%; animation-delay: 3s;">PM₁₀</div>
+    </div>
+
+    <div class="dashboard-container">
+        <div class="dashboard-content">
+            <h1>Air Quality Dashboard</h1>
+
+            <div id="data-cards">
+                <div class="data-card">
+                    <h2>CO₂</h2>
+                    <p><span id="co2">Loading...</span> ppm</p>
+                </div>
+                <div class="data-card">
+                    <h2>NO₂</h2>
+                    <p><span id="no2">Loading...</span> µg/m³</p>
+                </div>
+                <div class="data-card">
+                    <h2>PM₂.₅</h2>
+                    <p><span id="pm25">Loading...</span> µg/m³</p>
+                </div>
+                <div class="data-card">
+                    <h2>PM₁₀</h2>
+                    <p><span id="pm10">Loading...</span> µg/m³</p>
+                </div>
+            </div>
+
+            <h2>Health Indicator</h2>
+            <p id="healthy-indicator">Loading...</p>
+
+            <div class="table-container">
+                <h2>Last 10 Readings</h2>
+                <table id="readings-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>CO₂</th>
+                            <th>NO₂</th>
+                            <th>PM₂.₅</th>
+                            <th>PM₁₀</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+# Node.js specific (generated/managed)
+node_modules
+
+# Environment variables (sensitive)
+.env
+
+# Truffle build artifacts (generated)
+build/
+public/dist/
+
+# Parcel build output (generated frontend)
+public/dist/
+.parcel-cache/

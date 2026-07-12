@@ -1,0 +1,265 @@
+/* General Reset & Font */
+html,
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e0f7fa, #80deea);
+    color: #333;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Scrollable Page Container */
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: #004d40;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.dashboard-content {
+    width: 100%;
+    max-width: 960px;
+}
+
+/* Section Headings */
+.dashboard-container h2 {
+    color: #00695c;
+    font-weight: 500;
+    margin: 40px 0 10px;
+    font-size: 1.4em;
+}
+
+/* Health Indicator */
+#healthy-indicator {
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(6px);
+    color: #004d40;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Data Card Grid */
+#data-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Glass Card Style */
+.data-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.data-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.2);
+}
+
+.data-card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #00695c;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.data-card p {
+    font-size: 1.1em;
+    margin-bottom: 0;
+    color: #004d40;
+    font-weight: 400;
+}
+
+.data-card span {
+    font-size: 1.8em;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    color: #00796b;
+    transition: color 0.3s ease;
+}
+
+/* Table Container */
+.table-container {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow-x: auto;
+}
+
+/* Table Style */
+#readings-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    overflow: hidden;
+    font-size: 0.95em;
+}
+
+#readings-table thead {
+    background-color: rgba(0, 77, 64, 0.2);
+    color: #004d40;
+    font-weight: 600;
+}
+
+#readings-table th,
+#readings-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+#readings-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Molecule Container */
+.molecule-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Molecules Floating Animation */
+.molecule {
+    position: absolute;
+    border-radius: 50%;
+    color: rgba(0, 77, 64, 0.5);
+    font-weight: bold;
+    font-size: 1.5em;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.6;
+    animation: float 15s infinite linear;
+}
+
+.molecule.co2 {
+    top: 20%;
+    left: 10%;
+    animation-duration: 18s;
+}
+
+.molecule.no2 {
+    top: 50%;
+    left: 15%;
+    animation-duration: 14s;
+    font-size: 1.6em;
+    width: 65px;
+    height: 65px;
+}
+
+.molecule.pm25 {
+    top: 60%;
+    left: 30%;
+    animation-duration: 20s;
+    font-size: 1.2em;
+    width: 50px;
+    height: 50px;
+}
+
+.molecule.pm10 {
+    top: 80%;
+    left: 90%;
+    animation-duration: 16s;
+    font-size: 1.8em;
+    width: 70px;
+    height: 70px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-20px) translateX(15px) rotate(15deg);
+    }
+
+    50% {
+        transform: translateY(10px) translateX(-10px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translateY(-15px) translateX(-15px) rotate(10deg);
+    }
+
+    100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #data-cards {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .data-card {
+        padding: 20px;
+    }
+
+    .molecule {
+        font-size: 1.2em;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    #data-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .molecule {
+        opacity: 0.3;
+    }
+}
